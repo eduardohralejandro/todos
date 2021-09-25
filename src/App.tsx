@@ -1,9 +1,10 @@
-import './App.css';
+import TodoLayout from './components/TodoLayout';
+
 
 function App() {
   return (
-      <div className="App">
-        todo new
+      <div>
+        <TodoLayout />
       </div>
   );
 }
