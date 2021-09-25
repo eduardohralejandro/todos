@@ -3,8 +3,8 @@ import { createStore } from 'redux';
 import RootReducer from './reducers/rootReducer';
 
 
-const Store = createStore(RootReducer);
+const store = createStore(RootReducer);
 
 export type RootStore = ReturnType<typeof RootReducer>
 
-export default Store
+export default store;
