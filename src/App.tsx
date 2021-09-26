@@ -15,13 +15,11 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route path='/about'>
+          <Route exact path="/" component={Signin} />
+          <Route path='/todos'>
             <TodoLayout />
           </Route>
-          <Route path='/signin'>
-            <Signin />
-          </Route>
-          <Route path='/'>
+          <Route path='/signup'>
             <Signup />
           </Route>
         </Switch>

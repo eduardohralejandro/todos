@@ -1,17 +1,29 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
-import { setNewTodo, addTodo } from '../store/actions';
-import { Store } from '../store/types';
+import { addTodo } from '../store/actions/todoActions';
+
 
 const AddTodo = () => {
-
-  const newTodo = useSelector((state: Store) => state.newTodo);
+  const [newTodo, setNewTodo] = useState<string>('');
   const dispatch = useDispatch();
 
+  const onNewTodo = () => {
+    const token = localStorage.getItem('user') as string;
+    const body = {
+      id: uuidv4(),
+      title: newTodo,
+      checked: false,
+      userId: 3
+    }
+    
+    dispatch(addTodo(body, token));
+  }
   return (
     <div>
-      <input type='text' value={newTodo} onChange={(event) => dispatch(setNewTodo(event.target.value))} />
-      <button  onClick={() => dispatch(addTodo())}>add todo</button>
+      <input type='text' onChange={(event) => setNewTodo(event.target.value)} />
+      <button  onClick={onNewTodo}>add todo</button>
     </div>
   )
 }

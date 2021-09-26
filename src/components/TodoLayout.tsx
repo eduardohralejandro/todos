@@ -1,20 +1,26 @@
-import { FC } from 'react';
-import { useSelector } from 'react-redux';
+import { FC, useEffect } from 'react';
+import { useDispatch, useSelector,  } from 'react-redux';
 
 import Todo from './Todo';
 import AddTodo from './AddTodo';
 import RemoveTodo from '../components/RemoveTodo';
-import { Store, Todo as TodoType } from '../store/types';
-
+import { getTodo } from '../store/actions/todoActions';
+import { Todo as TodoType } from '../store/types/todo';
 
 
 const TodoLayout: FC = () => {
-  const todos = useSelector((state: any) => state.todos);
+  const todos = useSelector((state: any) => state.usersTodo);
+  const dispatch = useDispatch();
+  const token = localStorage.getItem('user') as string;
+  
+  useEffect(() => {
+    dispatch(getTodo(token)) 
+  }, [dispatch, token]);
 
   return (
     <div>
       <AddTodo />
-      {todos?.todos.map((todo: TodoType) => {
+      {todos?.todos?.data?.map((todo: TodoType) => {
         return (
           <div key={todo.id}>
             <Todo title={todo.title} />
