@@ -22,11 +22,10 @@ const Signin: FC<RouteComponentProps> = ({ history }) => {
     }
 
   return (
-    <div>
-      Signin
-        <input onChange={(event) => setName(event.target.value)} placeholder="name" />
-        <input onChange={(event) => setEmail(event.target.value)}  placeholder='email' /> 
-        <button  onClick={() => actionLogin()}>sign in</button>
+    <div className='signin-container'>
+        <input className='name-input' onChange={(event) => setName(event.target.value)} placeholder="name" />
+        <input className='password-input' onChange={(event) => setEmail(event.target.value)}  placeholder='password' /> 
+        <button className='btn-signin' onClick={() => actionLogin()}>sign in</button>
     </div>
   )
 }

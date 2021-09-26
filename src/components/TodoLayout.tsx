@@ -21,11 +21,14 @@ const TodoLayout: FC = () => {
 
   return (
     <div>
+      <div className='link-users'>
+        <img className='user-icon' src="https://www.linkpicture.com/q/user_1.svg" alt="icon-user" />
+        <Link style={{ textDecoration: 'none', color: '#3600CC', fontSize:'20px' }} to='/users'>Users</Link>
+      </div>
       <AddTodo />
-      <Link to='/users'>Users</Link>
       {todos?.todos?.data?.map((todo: TodoType) => {
         return (
-          <div key={todo.id}>
+          <div className='list-container' key={todo.id}>
             <Todo title={todo.title} />
             <RemoveTodo id={todo.id} />
           </div>

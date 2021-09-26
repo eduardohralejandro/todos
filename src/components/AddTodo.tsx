@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
 import { addTodo } from '../store/actions/todoActions';
-
+import '../index.css'
 
 const AddTodo = () => {
   const [newTodo, setNewTodo] = useState<string>('');
@@ -21,9 +21,9 @@ const AddTodo = () => {
     dispatch(addTodo(body, token));
   }
   return (
-    <div>
-      <input type='text' onChange={(event) => setNewTodo(event.target.value)} />
-      <button  onClick={onNewTodo}>add todo</button>
+    <div className='todo-container'>
+      <input  className='input-todo'type='text' onChange={(event) => setNewTodo(event.target.value)} />
+      <button className='btn-add-todo' onClick={onNewTodo}>add todo</button>
     </div>
   )
 }

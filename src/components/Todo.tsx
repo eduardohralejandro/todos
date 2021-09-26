@@ -7,7 +7,7 @@ type TodoProps = {
 
 const Todo: FC<TodoProps> = ({ title }) => {
   return (
-    <div>
+    <div className='list-item'>
       {title}
     </div>
   )

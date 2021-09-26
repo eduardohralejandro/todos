@@ -12,7 +12,7 @@ const RemoveTodo: FC<RemoveProps> = ({ id }) => {
   const dispatch = useDispatch();
   return (
     <div>
-      <button onClick={() => dispatch(removeTodo(id))}>remove</button>
+      <button className='remove-button'onClick={() => dispatch(removeTodo(id))}>remove</button>
     </div>
   )
 }

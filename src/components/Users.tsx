@@ -15,9 +15,9 @@ const Users = () => {
   
   return (
     <div>
-        <Link to='/todos'>Todos</Link>
+        <Link style={{ textDecoration: 'none', color: '#3600CC', fontSize:'20px', marginLeft:"24px" }} to='/todos'>Todos</Link>
         {users?.user?.users?.data.map((user:any) => {
-          return <h1 key={user.id}>{user.name}</h1>
+          return <h1 className="user-list" key={user.id}>{user.name}</h1>
         })}
     </div>
   )
