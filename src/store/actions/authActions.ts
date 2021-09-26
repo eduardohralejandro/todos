@@ -29,7 +29,7 @@ export const getUsers = ( token: string) => async (dispatch: Dispatch): Promise<
         'Authorization': `Bearer ${accessToken}`
       }
     });
-    console.log("USERS", data);
+
     dispatch({ type: GET_USERS_SUCCESS, payload: data });
 
   } catch (error) {
