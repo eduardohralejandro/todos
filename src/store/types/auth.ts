@@ -18,10 +18,12 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT = 'LOGOUT';
 export const SET_MESSAGE = 'SET_MESSAGE';
 export const CLEAR_MESSAGE = 'CLEAR_MESSAGE';
+export const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS';
 
 export type ActionTypesUser = 
   | { type: typeof REGISTER_SUCCESS, payload: string }
   | { type: typeof REGISTER_FAIL, payload: string }
   | { type: typeof LOGIN_FAIL, payload: string }
   | { type: typeof LOGIN_SUCCESS, payload: string }
+  | { type: typeof GET_USERS_SUCCESS, payload: string }
   | { type: typeof LOGOUT, payload:  string | any }

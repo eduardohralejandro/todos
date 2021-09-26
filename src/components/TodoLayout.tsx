@@ -1,11 +1,13 @@
 import { FC, useEffect } from 'react';
 import { useDispatch, useSelector,  } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import Todo from './Todo';
 import AddTodo from './AddTodo';
 import RemoveTodo from '../components/RemoveTodo';
 import { getTodo } from '../store/actions/todoActions';
 import { Todo as TodoType } from '../store/types/todo';
+
 
 
 const TodoLayout: FC = () => {
@@ -20,6 +22,7 @@ const TodoLayout: FC = () => {
   return (
     <div>
       <AddTodo />
+      <Link to='/users'>Users</Link>
       {todos?.todos?.data?.map((todo: TodoType) => {
         return (
           <div key={todo.id}>
