@@ -6,13 +6,13 @@ import { login } from '../store/actions/authActions';
 
 const Signin: FC<RouteComponentProps> = ({ history }) => {
   const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   
   const dispatch = useDispatch();
   const loginState = useSelector((state: any) => state);
       
     const actionLogin = () => {
-      const user = { id: "3", email: 'nilson@email.com', password: 'nilson' }; // auth user
+      const user = { id: "3", email: 'nilson@email.com', password: 'nilson' }; // auth user you can setName or setEmail here
       dispatch(login(user));
     }
   
@@ -24,7 +24,7 @@ const Signin: FC<RouteComponentProps> = ({ history }) => {
   return (
     <div className='signin-container'>
         <input className='name-input' onChange={(event) => setName(event.target.value)} placeholder="name" />
-        <input className='password-input' onChange={(event) => setEmail(event.target.value)}  placeholder='password' /> 
+        <input className='password-input' onChange={(event) => setPassword(event.target.value)}  placeholder='password' /> 
         <button className='btn-signin' onClick={() => actionLogin()}>sign in</button>
     </div>
   )
